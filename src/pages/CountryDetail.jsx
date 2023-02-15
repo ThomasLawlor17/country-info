@@ -1,22 +1,38 @@
 import React, { useState } from 'react'
 import { useContext } from 'react'
 import { useEffect } from 'react'
-import { useParams } from 'react-router'
+import { useLocation, useNavigate, useParams } from 'react-router'
+import { Link } from 'react-router-dom'
 import { AppContext } from '../App.provider'
 
 const CountryDetail = () => {
     const {id} = useParams()
+    const location = useLocation()
+    const navigate = useNavigate()
     const {getCountry} = useContext(AppContext)
 
-    const [country, setCountry] = useState(getCountry(id.toUpperCase()))
+
+    const [country, setCountry] = useState()
 
     useEffect(() => {
-        setCountry(getCountry(id.toUpperCase()))
-    }, [getCountry])
+        const result = getCountry(id.toUpperCase())
+        setCountry(result)
+    }, [getCountry, location])
 
   return (
     <div>
-        {country.name.common}
+        <button onClick={() => navigate(-1)}>Go Back</button>
+
+        {country ? country.name.common : ''}
+
+        <ul>
+            {country && country.borders ? country.borders.map((bc, i) => (
+                <li key={i}><Link to={`/${bc.toLowerCase()}`}>{bc}</Link></li>
+            ))
+        :
+        ''
+        }
+        </ul>
     </div>
   )
 }
