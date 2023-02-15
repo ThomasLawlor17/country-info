@@ -22,7 +22,7 @@ function App() {
     <main className={`App ${dark ? 'dark' : ''}`}>
       <Routes>
         <Route index element={<CountryIndex/>} />
-        <Route path='/:id' element={<CountryDetail/>}/>
+        <Route exact path='/:id' element={<CountryDetail/>}/>
         <Route path='*' element={<Navigate to='/' replace />}/>
       </Routes>
     </main>
