@@ -1,5 +1,6 @@
 import React from 'react'
 import { useContext } from 'react'
+import { Link } from 'react-router-dom'
 import { AppContext } from '../App.provider'
 
 const CountriesGrid = () => {
@@ -8,7 +9,7 @@ const CountriesGrid = () => {
   return (
     <div>
         {data.map((d, i) => (
-            <div key={i}>{d.name.common}</div>
+            <Link to={`/${d.cca3.toLowerCase()}`} key={i}>{d.name.common}</Link>
         ))}
     </div>
   )

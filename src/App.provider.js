@@ -8,12 +8,12 @@
     setCountries: () => {},
     data: [],
     setData: () => {},
-    selectedCountry: {},
     query: '',
     setQuery: () => {},
     filter: '',
     setFilter: () => {},
     filterList: [],
+    getCountry: () => {},
  })
 
  const AppProvider = ({children}) => {
@@ -32,6 +32,8 @@
     ])
 
     const toggleDark = () => setDark(dark => !dark)
+
+    const getCountry = cca3 => countries.find(c => (c.cca3 === cca3))
 
     useEffect(() => {
         const filtered = filterCountries(countries, filter)
@@ -53,6 +55,7 @@
                 filter,
                 setFilter,
                 filterList,
+                getCountry,
             }}>
                 {children}
             </AppContext.Provider>
