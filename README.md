@@ -30,8 +30,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Frontend Mentor](https://your-solution-url.com)
+- Live Site URL: [Firebase](https://your-live-site-url.com)
 
 ## Built with
 
@@ -44,6 +44,7 @@ Users should be able to:
 - [Styled Components](https://styled-components.com/) - For styles
 - [Axios](https://axios-http.com/docs/intro) - For API calls
 - [React Rounter](https://reactrouter.com/en/main) - For routes
+- [Firebase](https://firebase.google.com/) - For hosting
 
 ## Author
 
