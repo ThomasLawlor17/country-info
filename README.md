@@ -24,7 +24,9 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![Desktop Index View](./public/screenshots/Screenshot%202023-02-18%20at%205.34.59%20PM.png)
+![Mobile Index View](./public/screenshots/Screenshot%202023-02-18%20at%205.35.37%20PM.png)
+![Desktop Details View](./public/screenshots/Screenshot%202023-02-18%20at%205.36.08%20PM.png)
 
 ### Links
 
