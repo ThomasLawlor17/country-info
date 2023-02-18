@@ -11,8 +11,8 @@ display: grid;
 grid-template-columns: repeat(auto-fill, minmax(265px, 1fr));
 align-items: center;
 justify-content: center;
-margin: 0 54px;
-grid-gap: 40px;
+grid-gap: 70px;
+margin: 0 70px;
 
 a {
     position: relative;
@@ -37,7 +37,7 @@ a {
             li {
                 font-weight: 200;
                 font-size: 14px;
-                padding-bottom: 15px;
+                padding-bottom: 8px;
 
                 span {
                     font-weight: 600;
@@ -46,6 +46,16 @@ a {
         }
     }
 }
+@media (max-width: 769px) {
+    margin: 0 54px;
+    grid-gap: 40px;
+
+
+    li {
+        padding-bottom: 15px;
+    }
+}
+
 `
 
 

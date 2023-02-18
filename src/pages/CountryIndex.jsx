@@ -7,6 +7,7 @@ import Header from '../components/Header'
 import SearchForm from '../components/SearchForm'
 import { darkTheme, lightTheme } from '../styles/theme'
 import mixins from '../styles/mixins'
+import { GlobalStyle } from '../styles/GlobalStyle'
 
 const StyledMain = styled.main`
 ${mixins.bgDark};
@@ -19,6 +20,7 @@ const CountryIndex = () => {
 
   return (
     <ThemeProvider theme={dark ? darkTheme : lightTheme}>
+      <GlobalStyle/>
     <>
     <Header/>
     <StyledMain>

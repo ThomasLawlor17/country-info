@@ -21,10 +21,18 @@ a {
   ${mixins.textColor};
 }
 
+h1 {
+  font-size: 24px;
+  line-height: 18px;
+  margin-left: 80px;
+}
+
 div {
   display: flex;
   align-items: center;
   gap: 10px;
+  font-size: 16px;
+  margin-right: 70px;
 
   svg {
     ${mixins.textColor}

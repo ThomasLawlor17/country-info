@@ -9,10 +9,11 @@ import Icon from './icons/Icon'
 
 const StyledDiv = styled.div`
 display: flex;
-
+justify-content: space-between;
 
 form {
 position: relative;
+margin: 50px auto 50px 70px;
 
     .search {
         position: absolute;
@@ -29,7 +30,7 @@ position: relative;
     input {
         border: none;
         width: 278px;
-        height: 48px;
+        height: 60px;
         border-radius: 10px;
         padding: 0 2px 0 65px; 
         ${mixins.bgLight};
@@ -51,8 +52,11 @@ position: relative;
     outline: none;
     border: none;
     border-radius: 10px;
+    height: 60px;
+    width: 200px;
     ${mixins.bgLight};
     ${mixins.textColor};
+    margin: 50px 70px 50px auto;
 
     select {
         display: none;
@@ -115,16 +119,20 @@ position: relative;
 
 @media (max-width: 769px) {
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+    justify-content: center;
 
     form {
-        margin: 13px 0 40px 0;
+        margin: 13px 0 40px 4%;
+
+        input {
+            height: 48px;
+        }
     }
     .select {
         align-self: flex-start;
         margin: 0 0 32px 4%;
         height: 48px;
-        width: 200px;
     }
 }
 `

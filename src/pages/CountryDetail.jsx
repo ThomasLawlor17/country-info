@@ -5,6 +5,7 @@ import styled, {ThemeProvider} from 'styled-components'
 import { AppContext } from '../App.provider'
 import Header from '../components/Header'
 import Icon from '../components/icons/Icon'
+import { GlobalStyle } from '../styles/GlobalStyle'
 import mixins from '../styles/mixins'
 import { darkTheme, lightTheme } from '../styles/theme'
 
@@ -13,8 +14,9 @@ ${mixins.bgDark};
 min-height: calc(100vh - 160px);
 display: flex;
 flex-direction: column;
-gap: 64px;
-padding: 40px 26px;
+padding: 80px 70px 0 70px; 
+gap: 80px;
+
 ${mixins.textColor};
 
 .back-btn {
@@ -38,27 +40,76 @@ ${mixins.textColor};
 .country-info {
     width: 100%;
     display: flex;
-    flex-direction: column;
+    @media (min-width: 770px) {
+        justify-content: center;
+        gap: 120px;
+    }
 
     img {
-        max-height: 230px;
-        margin-bottom: 50px;
+        max-width: 560px;
+        max-height: 400px;
+        min-width: 38%
     }
+
+    @media (min-width: 770px) {
+        span {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            max-width: 600px;
+        }
+
+        h2 {
+            font-size: 32px;
+            margin-top: 46px;
+            margin-bottom: 40px;
+        }
+    }
+
     .info-top {
-        margin: 30px 0 45px 0;
+        margin: 0;
     }
     .info-b {
-        margin: 0 0 45px 0;
+        margin: 0;
     }
     .info-top, .info-b {
         display: flex;
         flex-direction: column;
         gap: 20px;
 
+        li {
+            display: flex;
+            gap: 5px;
+        }
+
         span {
             font-weight: 600;
         }
     }
+
+    @media (min-width: 770px) {
+        span.bottom {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 30px;
+            margin-top: 40px;
+            max-width: 600px;
+            overflow-x: scroll;
+            position: relative;
+
+            &::scrollbar {
+                color: red;
+                background-color: red;
+            }
+
+            h3 {
+                font-size: 16px;
+                white-space: nowrap;
+            }
+        }
+    }
+
     .borders {
         @media(max-width: 769px) {
             display: grid;
@@ -66,6 +117,10 @@ ${mixins.textColor};
         }
         display: flex;
         gap: 9px;
+
+        @media (min-width: 770px) {
+            margin: 0;
+        }
 
 
         li {
@@ -87,6 +142,28 @@ ${mixins.textColor};
         }
     }
 }
+
+@media (max-width: 769px) {
+    gap: 64px;
+    padding: 40px 26px;
+
+    .country-info {
+        flex-direction: column;
+
+        img {
+            max-width: 320px;
+            max-height: 230px;
+            margin-bottom: 50px;
+        }
+        .info-top {
+            margin: 30px 0 45px 0;
+        }
+        .info-b {
+            margin: 0 0 45px 0;
+        }
+    }
+}
+
 `
 
 
@@ -110,6 +187,7 @@ const CountryDetail = () => {
 
   return (
     <ThemeProvider theme={dark ? darkTheme : lightTheme}>
+        <GlobalStyle/>
     <>
     <Header/>
     <StyledMain>
@@ -118,7 +196,9 @@ const CountryDetail = () => {
             {country ? 
             <>
             <img src={country.flags.png} alt="" />
+            <div className="info">
             <h2>{country.name}</h2>
+            <span>
             <ul className="info-top">
                 <li><span>Native Name: </span>{country.nativeName}</li>
                 <li><span>Population: </span>{country.population}</li>
@@ -131,6 +211,8 @@ const CountryDetail = () => {
                 <li><span>Currencies: </span>{country.currencies.map(c => c.name)}</li>
                 <li><span>Languages: </span>{country.languages.map(l => l.name).join(', ')}</li>
             </ul>
+            </span>
+            <span className='bottom'>
             <h3>Border Countries:</h3>
         <ul className='borders'>
             {country && borderCountries && country.borders ? borderCountries.map((bc, i) => (
@@ -140,6 +222,8 @@ const CountryDetail = () => {
         <span>No Border Countries</span>
         }
         </ul>
+        </span>
+        </div>
         </>
  : ''}
         </div>
