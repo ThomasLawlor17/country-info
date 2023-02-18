@@ -31,7 +31,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Frontend Mentor](https://your-solution-url.com)
-- Live Site URL: [Firebase](https://your-live-site-url.com)
+- Live Site URL: [Firebase](https://country-info-fem.web.app)
 
 ## Built with
 
@@ -43,7 +43,7 @@ Users should be able to:
 - [React](https://reactjs.org/) - JS library
 - [Styled Components](https://styled-components.com/) - For styles
 - [Axios](https://axios-http.com/docs/intro) - For API calls
-- [React Rounter](https://reactrouter.com/en/main) - For routes
+- [React Router](https://reactrouter.com/en/main) - For routes
 - [Firebase](https://firebase.google.com/) - For hosting
 
 ## Author

@@ -90,7 +90,7 @@ margin: 50px auto 50px 70px;
         border-radius: 10px;
         z-index: 2;
 
-        option {
+        li {
             font-size: 16px;
             padding-top: 15px;
 
@@ -165,7 +165,7 @@ const SearchForm = () => {
             <ul className={`options ${open ? '' : 'hidden'}`}>
                 {filter ? <option onClick={() => handleChooseFilter('')}>All</option> : ''}
                 {filterList.map((f, i) => (
-                    <option key={i} onClick={() => handleChooseFilter(f)} className={f === filter ? 'none' : ''}>{f}</option>
+                    <li key={i} onClick={() => handleChooseFilter(f)} className={f === filter ? 'none' : ''}>{f}</li>
                 ))}
             </ul>
         </div>
